@@ -13,32 +13,28 @@ $(function() {
     * a related set of tests. This suite is all about the RSS
     * feeds definitions, the allFeeds variable in our application.
     */
+    /* This is our first test - it tests to make sure that the
+     * allFeeds variable has been defined and that it is not
+     * empty. Experiment with this before you get started on
+     * the rest of this project. What happens when you change
+     * allFeeds in app.js to be an empty array and refresh the
+     * page?
+     */
+     /* TODO: Write a test that loops through each feed
+      * in the allFeeds object and ensures it has a URL defined
+      * and that the URL is not empty.
+      */
     describe('RSS Feeds', function() {
-        /* This is our first test - it tests to make sure that the
-         * allFeeds variable has been defined and that it is not
-         * empty. Experiment with this before you get started on
-         * the rest of this project. What happens when you change
-         * allFeeds in app.js to be an empty array and refresh the
-         * page?
-         */
-        it('are defined', function() {
+      it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
-
-
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a URL defined
-         * and that the URL is not empty.
-         */
-
-         it('have a url and it is not empty',function() {
+      it('have a url and it is not empty',function() {
            for(let feed of allFeeds){
              expect(feed.url).toBeDefined();
              expect(feed.url.length).not.toBe(0);
            }});
-
-           it('have a name and it is not empty',function() {
+       it('have a name and it is not empty',function() {
              for(let feed of allFeeds){
                expect(feed.name).toBeDefined();
                expect(feed.name.length).not.toBe(0);
@@ -50,9 +46,14 @@ $(function() {
          */
 
 
-
     /* TODO: Write a new test suite named "The menu" */
 
+    describe ("The Menu",function(){
+      it('is hidden by default', function(){
+        var a = document.querySelector('.menu-hidden');
+        expect(a.classList).toContain("menu-hidden");
+      });
+    });
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
