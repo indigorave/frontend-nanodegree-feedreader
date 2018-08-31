@@ -50,12 +50,21 @@ $(function() {
 
     describe ("The Menu",function(){
       it('is hidden by default', function(){
-        var a = document.querySelector('.menu-hidden');
+        let a = document.querySelector('.menu-hidden');
         expect(a.classList).toContain("menu-hidden");
       });
+      it('is toggled on menu click', function(){
+        let a = document.querySelector('.menu-hidden');
+        let menuIcon = $('.menu-icon-link');
+          menuIcon.click();
+          expect(a.classList).not.toContain('menu-hidden');
+          menuIcon.click();
+          expect(a.classList).toContain('menu-hidden');
+      });
     });
-        /* TODO: Write a test that ensures the menu element is
-         * hidden by default. You'll have to analyze the HTML and
+        /* TODO: Write a test that ensures the menu element is truly
+         * hidden by default by checking that the transform method is not less than
+         -12. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
