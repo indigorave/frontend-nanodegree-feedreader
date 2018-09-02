@@ -78,7 +78,7 @@ beforeEach(function(done) {
   });
 });
   it('has at least one entry in the feed container', function(){
-    let feed = $('.feed');
+    let feed = $('.feed .entry');
     expect(feed.length).not.toBe(0);
   });
 });
